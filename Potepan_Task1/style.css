@@ -8,17 +8,23 @@
     display: none !important;
 }
 
+.Person_Phone{
+    display: none !important;
+}
+
 /* ヘッダーs */
 
 header{
     position: fixed; /*スクロールを固定*/
     background-color:white;
+    height: 7.5vh;
     width: 100%;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1) ;
 }
 
 .Potepan{ 
-    width: 10%;
-    padding-top: 0.8vw;
+    height: 20px;
+    padding-top: 2.7vh;
     padding-left: 2vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
 }
@@ -27,26 +33,29 @@ header{
     display: flex; /* 子要素を横一列に */
     list-style: none; /* リストの点を削除 */      
     justify-content: space-between; /* 子要素を均等に横配置する設定 */
-    gap: 1vw; /* 子要素間の余白を設定 */
+    gap: 0.6vw; /* 子要素間の余白を設定 */
     float: right; /* タイトルの横に並べる */
-    margin-top: 0.8vw;
-    margin-right: 2vw;
+    margin-top: 1.8vh;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     text-align: center; /* テキストを真ん中に揃える */
 }
 
 .List_Title{ /* li span */
     display: inline-block;
-    font-size: 0.6vw;
-    font-weight: 600; /* 文字の太さ */
-    color: black; /* リンク選択後色が変わらないように */
+    font-size: 11px;
+    font-weight: 600;
+    color: #333; /* リンク選択後色が変わらないように */
+    position: relative;
 }
 
 .List_Text{ /* li span*/
     display: inline-block;
-    font-size: 0.5vw;
+    font-size: 10px;
+    font-weight: 600;
     white-space: nowrap; /*改行を防ぐ */
-    color: black; /* リンク選択後色が変わらないように */
+    color: #333; /* リンク選択後色が変わらないように */
+    position: relative;
+    top: -0.4vh; /* 縦方向に少し上へ */
 }
 
 .List_Counseling{
@@ -58,10 +67,12 @@ header{
     border: none;
     border-radius: 10vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
-    width: 20%;
-    font-size: 0.6vw;
-    height: 4vh;
-    margin-top: -0.2vw;
+    width: 22%;
+    font-size: 12px;
+    height: 4.3vh;
+    margin-top: -0.2vh;
+    margin-left: 1vw;
+    margin-right: 2.7vw;
 }
 
 .Counseling_Link{
@@ -85,40 +96,57 @@ header{
     width: 775px;
 }
 
-.Triangle{
-    position: relative; /*親要素固定*/
+.Triangle{ /* 親要素 */
+    position: relative;
     z-index: -2;/*背景用*/
 }
+
 .Triangle_Left{
+    position: relative;
 }
 
 .Triangle_Right{
     position: absolute; /*Triangleの子要素 */
     right: 0; /*右寄せ*/
-    margin-top: 30vw;
+    margin-top: 42vh;
 }
 
 .Rubber_Band{
-    position: absolute; /*Triangleの子要素 */
-    margin-top: 13vw;
-    margin-left: -35vw;
+    position: absolute;
+    top: 16.5vh;
+    left: -4vw;
 }
 
 /* 背景e */
 
 /* ボディs */
+body{
+    margin: 0; /*画面端の余白を削除 */
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
 
 .Circle{
-    position: absolute; /*bodyの子要素*/
+    position: absolute;
+    top: 19.5vh;
     left: 45vw;
-    bottom: 55vh;
+}
+
+.Container{
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 219px;
+    margin-top: -36.5vh;
 }
 
 h1{
-    position: absolute; /*bodyの子要素*/
-    font-size: 2.5vw;
-    top: 24vh;
-    left: 20vw;
+    font-family: "Lato", sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-top: 6vh;
+    margin-bottom: 1vh;
 }
 
 .Counseling{
@@ -130,18 +158,16 @@ h1{
     text-decoration: none;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     border-radius: 5vw; /* 角を丸く */
-    font-size: 1vw;
-    font-weight: 700; /* 文字の太さ */
-    height: 8vh;
-    width: 28%;
-    margin-top: 14vh;
-    margin-left: 20vw;
+    font-size: 16px;
+    font-weight: 600; /* 文字の太さ */
+    height: 65px;
+    width: 47%;
 }
 
 .Annotation{
-    margin-top: 2vh;
-    margin-left: 20vw;
-    opacity: 0.6; /*透明度 */
+    font-size: 12px;
+    margin-top: 1.9vh;
+    opacity: 0.7; /*透明度 */
 }
 
 /* ボディe */
@@ -152,8 +178,12 @@ h1{
 
 /* ------------------------------------------------------------------------- */
 
-/* タブレット */
-@media only screen and (min-width: 601px) and (max-width: 1024px) { 
+/* タブレット 高さ900以上 */
+@media only screen and (min-width: 601px) and (max-width: 1024px) and (min-height: 900px){ 
+
+.Person_Phone{
+    display: none !important;
+}
 
 /* ヘッダーs */
 header{
@@ -161,15 +191,14 @@ header{
     background-color:white;
     width: 100%;
     height: 6vh;
-    top: 0;
-    left: 0;
     z-index: 100;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1) ;
 }
 
 .Potepan{ 
-    width: 28%;
-    padding-top: 2vh;
-    padding-left: 2vw;
+    width: 22%;
+    padding-top: 2.2vh;
+    padding-left: 4vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
 }
 
@@ -185,7 +214,7 @@ header{
     cursor: pointer;
     position: fixed;
     right: 0;
-    margin-top: -1vh;
+    margin-top: -0.2vh;
     margin-right: 8vw;
 }
 
@@ -195,23 +224,23 @@ header{
 .Hamburger-Line  span:after {
     content: '';
     display: block;
-    height: 0.05vh;
-    width: 3vw;
+    height: 0.15vh; /* 線の濃さ */
+    width: 2.7vw;
     bottom: 0.7vh;
-    background: #333;
+    background: #333; /* 三本線の色 */
     transition: 0.5s;
     position: absolute;
-    opacity: 0.7; /*透明度 */
+    opacity: 0.7;
 }
 
 /* 三本線の一番上の棒の位置調整 */
 .Hamburger-Line  span:before {
-    bottom: 0.8vh;
+    bottom: 0.7vh;
 }
 
 /* 三本線の一番下の棒の位置調整 */
 .Hamburger-Line  span:after {
-    top: 0.8vh;
+    top: 0.7vh;
 }
 
 /* id クリック */
@@ -250,22 +279,23 @@ header{
     text-align: center;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     padding: 0;
+    letter-spacing: 5px; /* 文字の間に隙間を入れる */
 }
 
 .List_Title{ /* li span */
     font-family: "Lato", sans-serif;
     display: inline-block;
-    font-size: 4vw;
-    font-weight: 600; /* 文字の太さ */
+    font-size: 1.8vw;
+    font-weight: 500; /* 文字の太さ */
     color: white; /* リンク選択後色が変わらないように */
-    padding-top: 5vh;
-    width: 60% /* 改行のため */
+    padding-top: 3vh;
+    width: 60%; /* 改行のため */
 }
 
 .List_Text{ /* li span*/
     font-family: "Lato", sans-serif;
     display: inline-block;
-    font-size: 2vw;
+    font-size: 1.3vw;
     color: #F79214; /* リンク選択後色が変わらないように */
     width: 50%;/* 改行のため */
 }
@@ -279,9 +309,9 @@ header{
     border: none;
     border-radius: 10vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
-    width: 20%;
-    font-size: 1.2vw;
-    height: 4%;
+    width: 28%;
+    font-size: 1.7vw;
+    height: 5%;
     margin: auto;
     margin-top: 5vh;
 }
@@ -321,8 +351,8 @@ header{
 
 .Rubber_Band{
     position: absolute; /*Triangleの子要素 */
-    margin-top: 15vh;
-    margin-left: -40vw;
+    margin-top: 11vh;
+    margin-left: -45vw;
 }
 
 /* 背景e */
@@ -332,6 +362,7 @@ header{
 
 body{ 
     margin: auto; /*周りの隙間をなくす*/
+
 }
 
 .Circle{
@@ -341,10 +372,10 @@ body{
 }
 
 h1{
-    position: absolute; /*bodyの子要素*/
     font-size: 5vw;
-    top: 23vh;
-    left: 5vw;
+    margin-top: -5vh;
+    margin-left: 4vw;
+    bottom: 5vh;
     color: #333;
     font-family: "Lato", sans-serif;
 }
@@ -358,44 +389,288 @@ h1{
     text-decoration: none;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     border-radius: 5vw; /* 角を丸く */
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     font-weight: 700; /* 文字の太さ */
-    height: 5vh;
-    width: 55%;
-    margin-top: 14vh;
-    margin-left: 5vw;
+    height: 6vh;
+    width: 60%;
+    margin-top: 1vh;
+    margin-left: 3vw;
+    letter-spacing: 2px; /* 文字の間に隙間を入れる */
 }
 
 .Annotation{
-    margin-top: 1.5vh;
-    margin-left: 6vw;
+    margin-top: 1.4vh;
+    margin-left: 4vw;
     opacity: 0.6; /*透明度 */
 }
 
 /* ボディe */
 
 
-} /* タブレット */
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------*/
+
+/* タブレット 900以下 nesthub用*/
+
+/* タブレット 高さ900以下 */
+@media only screen and (min-width: 601px) and (max-width: 1024px) and (max-height: 900px){ 
+
+.Person_Phone{
+    display: none !important;
+}
+
+    /* ヘッダーs */
+    header{
+        position: fixed; /*スクロールを固定*/
+        background-color:white;
+        width: 100%;
+        height: 12vh;
+        z-index: 100;
+        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1) ;
+    }
+    
+    .Potepan{ 
+        width: 18%;
+        padding-top: 4vh;
+        padding-left: 3vw;
+        cursor: pointer; /* ポイントが当たった時カーソルを変える */
+    }
+    
+    /* チェックボックス確認削除 */
+    .Checkbox {
+        display: none;
+    }
+    /* ハンバーガーアイコンの設置スペース */
+    .Hamburger-Line {
+        display: flex;
+        align-items: center;
+        z-index: 100;
+        cursor: pointer;
+        position: fixed;
+        right: 0;
+        margin-top: -1.4vh;
+        margin-right: 5.5vw;
+    }
+    
+    /* ハンバーガーメニューのアイコン */
+    .Hamburger-Line  span,
+    .Hamburger-Line  span:before,
+    .Hamburger-Line  span:after {
+        content: '';
+        display: block;
+        height: 0.05vh;
+        width: 2.2vw;
+        bottom: 0.7vh;
+        background: black; /* 三本線の色 */
+        transition: 0.5s;
+        position: absolute;
+        opacity: 0.8;
+    }
+    
+    /* 三本線の一番上の棒の位置調整 */
+    .Hamburger-Line  span:before {
+        bottom: 1.5vh;
+    }
+    
+    /* 三本線の一番下の棒の位置調整 */
+    .Hamburger-Line  span:after {
+        top: 1.5vh;
+    }
+    
+    /* id クリック */
+    /* アイコンがクリックされたら真ん中の線を透明にする */
+    #menu-btn-check:checked ~ .Hamburger-Line  span {
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+    #menu-btn-check:checked ~ .Hamburger-Line  span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    
+    #menu-btn-check:checked ~ .Hamburger-Line  span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    /* アイコンがクリックされたらメニューを表示 */
+    #menu-btn-check:checked ~ .List {
+        left: 0;/* メニューを画面に入れる */
+    }
+    
+    /* メニューのデザイン*/
+    .List {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 99; /* ボタンよりも下に */
+        top: 9.5vh;
+        left: 100%; /* メニューを画面の外に飛ばす */
+        background: rgba(0, 0, 0, 0.8);;
+        transition: .5s;
+        list-style: none;  /* メニュー黒ポチを消す */
+        text-align: center;
+        cursor: pointer; /* ポイントが当たった時カーソルを変える */
+        padding: 0;
+        letter-spacing: 5px; /* 文字の間に隙間を入れる */
+    }
+    
+    .List_Title{ /* li span */
+        font-family: "Lato", sans-serif;
+        display: inline-block;
+        font-size: 1.5vw;
+        font-weight: 500; /* 文字の太さ */
+        color: white; /* リンク選択後色が変わらないように */
+        padding-top: 6vh;
+        width: 60%; /* 改行のため */
+    }
+    
+    .List_Text{ /* li span*/
+        font-family: "Lato", sans-serif;
+        display: inline-block;
+        font-size: 1vw;
+        color: #F79214; /* リンク選択後色が変わらないように */
+        width: 50%;/* 改行のため */
+    }
+    
+    .List_Counseling{
+        display: flex;/* centerにずらせるように */
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #F79214;
+        border: none;
+        border-radius: 10vw;
+        cursor: pointer; /* ポイントが当たった時カーソルを変える */
+        width: 25%;
+        font-size: 1.4vw;
+        height: 10%;
+        margin: auto;
+        margin-top: 5vh;
+    }
+    
+    .Counseling_Link{
+        text-decoration:none;
+        color: #fff; /* リンク選択後色が変わらないように */
+    }
+    
+    /* ヘッダーe */
+    
+    /* 背景s */
+    
+    .Background{
+        position: relative; /*親要素固定*/
+        z-index: -1;/*背景用*/
+    }
+    .Person{
+        position: absolute; /*Backgroundの子要素固定 */
+        right: 0; /*右寄せ*/
+        width: 775px;
+    }
+    
+    .Triangle{
+        position: relative; /*親要素固定*/
+        z-index: -2;/*背景用*/
+    }
+    .Triangle_Left{
+        left: 0;
+    }
+    
+    .Triangle_Right{
+        position: absolute; /*Triangleの子要素 */
+        right: 0; /*右寄せ*/
+        margin-top: 65vh;
+    }
+    
+    .Rubber_Band{
+        position: absolute; /*Triangleの子要素 */
+        margin-top: 23vh;
+        margin-left: -40vw;
+    }
+    
+    /* 背景e */
+    
+    
+    /* ボディs */
+    
+    body{ 
+        margin: auto; /*周りの隙間をなくす*/
+    }
+    
+    .Circle{
+        position: absolute; /*bodyの子要素*/
+        left: 45vw;
+        bottom: 37vh;
+    }
+    
+    h1{
+        position: absolute; /*bodyの子要素*/
+        font-size: 4vw;
+        top: 42vh;
+        left: 4vw;
+        color: #333;
+        font-family: "Lato", sans-serif;
+    }
+    
+    .Counseling{
+        display: flex;/* centerにずらせるように */
+        align-items: center;
+        justify-content: center; /* 文字を真ん中に */
+        background-color: #F79214;
+        border: none; /* 円の線を消す */
+        text-decoration: none;
+        cursor: pointer; /* ポイントが当たった時カーソルを変える */
+        border-radius: 5vw; /* 角を丸く */
+        font-size: 1.5vw;
+        font-weight: 700; /* 文字の太さ */
+        height: 10vh;
+        width: 47%;
+        margin-top: 22vh;
+        margin-left: 4vw;
+    }
+    
+    .Annotation{
+        margin-top: 1.5vh;
+        margin-left: 4vw;
+        opacity: 0.6; /*透明度 */
+    }
+    
+    /* ボディe */
+    
+    
+    } /* タブレット */
 
 /* ---------------------------------------------------------------------*/
 
 @media only screen and (max-width: 600px) { /* スマホ */
+
+.Person{
+    display: none !important;
+}
+
+
+.Triangle{
+    display: none !important;
+}
 
 /* ヘッダーs */
 header{
     position: fixed; /*スクロールを固定*/
     background-color:white;
     width: 100%;
-    height: 6vh;
+    height: 5.5vh;
     top: 0;
     left: 0;
     z-index: 100;
 }
 
 .Potepan{ 
-    width: 30%;
+    width: 35%;
     padding-top: 2vh;
-    padding-left: 2vw;
+    padding-left: 4vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
 }
 
@@ -411,8 +686,8 @@ header{
     cursor: pointer;
     position: fixed; /* 右端に固定 */
     right: 0;
-    margin-top: -0.9vh;
-    margin-right: 10vw;
+    margin-top: -1.3vh;
+    margin-right: 8vw;
 }
 
 /* ハンバーガーメニューのアイコン */
@@ -431,7 +706,7 @@ header{
 
 /* 三本線の一番上の棒の位置調整 */
 .Hamburger-Line  span:before {
-    bottom: 0.8vh;
+    bottom: 0.7vh;
 }
 
 /* 三本線の一番下の棒の位置調整 */
@@ -474,14 +749,15 @@ header{
     list-style: none;  /* メニュー黒ポチを消す */
     text-align: center;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
-    margin-top: 1vh;
+    margin-top: 0.5vh;
     padding: 0;
+    letter-spacing: 5px; /* 文字の間に隙間を入れる */
 }
 
 .List_Title{ /* li span */
     font-family: "Lato", sans-serif;
     display: inline-block;
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 600; /* 文字の太さ */
     color: white; /* リンク選択後色が変わらないように */
     padding-top: 5vh;
@@ -507,7 +783,7 @@ header{
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     width: 50%;
     font-size: 3vw;
-    height: 5%;
+    height: 6%;
     margin: auto;
     margin-top: 5vh;
 }
@@ -525,20 +801,17 @@ header{
     position: relative; /*親要素固定*/
     z-index: -1;/*背景用*/
 }
-.Person{
+
+.Person_Phone{
     position: absolute; /*Backgroundの子要素固定 */
-    right: 0; /*右寄せ*/
-    height: 30vh;
-    margin-top: 5vh;
+    width: 100%;
+    margin-top: 5.2vh;
+    z-index: -1;/*背景用*/
 }
 
 .Triangle{
     position: relative; /*親要素固定*/
     z-index: -2;/*背景用*/
-}
-.Triangle_Left{
-    left: 0;
-    width: 50%;
 }
 
 .Triangle_Right{
@@ -563,21 +836,24 @@ body{
 
 .Circle{
     position: absolute; /*bodyの子要素*/
-    width: 20%;
-    left: 65vw;
-    bottom: 60vh;
+    width: 25%;
+    left: 60vw;
+    bottom: 56vh;
 }
 
 h1{
-    position: absolute; /*bodyの子要素*/
+    position: absolute; /*bodyの子要素 */
     font-size: 5vw;
-    top: 33vh;
-    left: 5vw;
+    margin-top: 35vh;
+    margin-left: 4vw;
     color: #333;
     font-family: "Lato", sans-serif;
+    line-height: 3.8vh; /* 行間 */
+    letter-spacing: 1.5px; /* 文字の間に隙間を入れる */
 }
 
 .Counseling{
+    position: absolute; /*bodyの子要素 */
     display: flex;/* centerにずらせるように */
     align-items: center;
     justify-content: center; /* 文字を真ん中に */
@@ -589,15 +865,16 @@ h1{
     font-size: 3.5vw;
     font-weight: 500; /* 文字の太さ */
     height: 7vh;
-    width: 95%;
-    margin-top: 25vh;
+    width: 93%;
+    margin-top: 48vh;
     margin-left: 2vw;
 }
 
 .Annotation{
-    margin-top: 1.5vh;
+    position: absolute; /*bodyの子要素 */
+    margin-top: 57vh;
     margin-left: 2vw;
-    font-size: 2.8vw;
+    font-size: 3vw;
     opacity: 0.6; /*透明度 */
 }
 
