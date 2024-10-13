@@ -17,14 +17,14 @@
 header{
     position: fixed; /*スクロールを固定*/
     background-color:white;
-    height: 7.5vh;
+    height: 70px;
     width: 100%;
     box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .1) ;
 }
 
 .Potepan{ 
     height: 20px;
-    padding-top: 2.7vh;
+    padding-top: 25px;
     padding-left: 2vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
 }
@@ -33,9 +33,9 @@ header{
     display: flex; /* 子要素を横一列に */
     list-style: none; /* リストの点を削除 */      
     justify-content: space-between; /* 子要素を均等に横配置する設定 */
-    gap: 0.6vw; /* 子要素間の余白を設定 */
+    gap: 13px; /* 子要素間の余白を設定 */
     float: right; /* タイトルの横に並べる */
-    margin-top: 1.8vh;
+    margin-top: 18px;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     text-align: center; /* テキストを真ん中に揃える */
 }
@@ -55,7 +55,7 @@ header{
     white-space: nowrap; /*改行を防ぐ */
     color: #333; /* リンク選択後色が変わらないように */
     position: relative;
-    top: -0.4vh; /* 縦方向に少し上へ */
+    top: -5px; /* 縦方向に少し上へ */
 }
 
 .List_Counseling{
@@ -68,11 +68,10 @@ header{
     border-radius: 10vw;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
     width: 22%;
+    height: auto;
     font-size: 12px;
-    height: 4.3vh;
-    margin-top: -0.2vh;
-    margin-left: 1vw;
-    margin-right: 2.7vw;
+    margin-top: -5px;
+    margin-right: 50px;
 }
 
 .Counseling_Link{
@@ -108,13 +107,13 @@ header{
 .Triangle_Right{
     position: absolute; /*Triangleの子要素 */
     right: 0; /*右寄せ*/
-    margin-top: 42vh;
+    margin-top: 400px;
 }
 
 .Rubber_Band{
     position: absolute;
-    top: 16.5vh;
-    left: -4vw;
+    top: 150px;
+    left: -70px;
 }
 
 /* 背景e */
@@ -126,9 +125,9 @@ body{
 }
 
 .Circle{
-    position: absolute;
-    top: 19.5vh;
-    left: 45vw;
+    position: absolute; /* bodyの子要素 */
+    top: 160px;
+    left: 430px;
 }
 
 .Container{
@@ -137,7 +136,7 @@ body{
     margin-right: auto;
     position: relative;
     padding-top: 219px;
-    margin-top: -36.5vh;
+    margin-top: -320px;
 }
 
 h1{
@@ -145,8 +144,8 @@ h1{
     font-size: 42px;
     font-weight: 600;
     opacity: 0.8;
-    margin-top: 6vh;
-    margin-bottom: 1vh;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .Counseling{
@@ -157,7 +156,7 @@ h1{
     border: none; /* 円の線を消す */
     text-decoration: none;
     cursor: pointer; /* ポイントが当たった時カーソルを変える */
-    border-radius: 5vw; /* 角を丸く */
+    border-radius: 50px; /* 角を丸く */
     font-size: 16px;
     font-weight: 600; /* 文字の太さ */
     height: 65px;
@@ -166,7 +165,7 @@ h1{
 
 .Annotation{
     font-size: 12px;
-    margin-top: 1.9vh;
+    margin-top: 20px;
     opacity: 0.7; /*透明度 */
 }
 
